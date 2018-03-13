@@ -544,6 +544,9 @@ class API extends \Piwik\Plugin\API
             $date = Date::now()->subPeriod(1, $report['period'])->toString();
         }
 
+        $backUpIdSite = Common::getRequestVar('idSite', '');
+        $_GET['idSite'] = $report['idsite'];
+
         $language = \Piwik\Plugins\LanguagesManager\API::getInstance()->getLanguageForUser($report['login']);
 
         // generate report
@@ -606,6 +609,8 @@ class API extends \Piwik\Plugin\API
                 $force
             )
         );
+
+        $_GET['idSite'] = $backUpIdSite;
 
         // Update flag in DB
         $now = Date::now()->getDatetime();

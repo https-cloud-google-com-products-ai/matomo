@@ -120,6 +120,13 @@ class ReportsProvider
         $cacheId = CacheId::languageAware('Reports' . md5(implode('', $reports)));
         $cache   = PiwikCache::getTransientCache();
 
+        $idSite = Common::getRequestVar('idSite', 0, 'int');
+
+        if (!empty($idSite)) {
+            // some reports may be per site!
+            $cacheId .= '_' . (int) $idSite;
+        }
+
         if (!$cache->contains($cacheId)) {
             $instances = array();
 
