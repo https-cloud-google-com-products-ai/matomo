@@ -8,7 +8,7 @@
  */
 
 describe("ActionsDataTable", function () {
-    this.retries(3);
+    // this.retries(3);
 
     this.timeout(0);
 
@@ -60,7 +60,7 @@ describe("ActionsDataTable", function () {
     });
 
     it("should display pageview percentages when hovering over pageviews column", function (done) {
-        this.retries(3);
+        // this.retries(3);
         expect.screenshot('pageview_percentages').to.be.capture(function (page) {
             page.mouseMove('tr:contains("thankyou") td.column:eq(1)');
             page.wait(1000);
@@ -68,7 +68,7 @@ describe("ActionsDataTable", function () {
     });
 
     it("should generate a proper title for the visitor log segmented by the current row", function (done) {
-        this.retries(3);
+        // this.retries(3);
         expect.screenshot('segmented_visitor_log_hover').to.be.capture(function (page) {
             var row = 'tr:contains("thankyou") ';
             page.mouseMove(row + 'td.column:first');
@@ -86,7 +86,7 @@ describe("ActionsDataTable", function () {
     });
 
     it("should display unique pageview percentages when hovering over unique pageviews column", function (done) {
-        this.retries(3);
+        // this.retries(3);
         expect.screenshot('unique_pageview_percentages').to.be.capture(function (page) {
             page.click('.ui-widget .ui-dialog-titlebar-close');
 

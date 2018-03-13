@@ -62,7 +62,7 @@ describe("UIIntegrationTest", function () { // TODO: Rename to Piwik?
     });
 
     it("should load dashboard3 correctly", function (done) {
-        this.retries(3);
+        // this.retries(3);
         expect.screenshot("dashboard3").to.be.captureSelector('.pageWrap', function (page) {
             page.load("?" + urlBase + "#?" + generalParams + "&category=Dashboard_Dashboard&subcategory=3");
         }, done);
@@ -266,7 +266,7 @@ describe("UIIntegrationTest", function () { // TODO: Rename to Piwik?
     });
 
     it('should load the referrers > search engines & keywords page correctly', function (done) {
-        this.retries(3);
+        // this.retries(3);
         expect.screenshot('referrers_search_engines_keywords').to.be.captureSelector('.pageWrap', function (page) {
             page.load("?" + urlBase + "#?" + generalParams + "&category=Referrers_Referrers&subcategory=Referrers_SubmenuSearchEngines");
         }, done);
@@ -376,7 +376,7 @@ describe("UIIntegrationTest", function () { // TODO: Rename to Piwik?
 
     // widgetize
     it('should load the widgetized visitor log correctly', function (done) {
-        this.retries(3);
+        // this.retries(3);
         expect.screenshot('widgetize_visitor_log').to.be.capture(function (page) {
             expect.screenshot("widgetize_visitor_log").to.be.skippedOnAbort();
             page.load("?" + widgetizeParams + "&" + generalParams + "&moduleToWidgetize=Live&actionToWidgetize=getVisitorLog");
@@ -387,7 +387,7 @@ describe("UIIntegrationTest", function () { // TODO: Rename to Piwik?
     });
 
     it('should load the widgetized all websites dashboard correctly', function (done) {
-        this.retries(3);
+        // this.retries(3);
         expect.screenshot('widgetize_allwebsites').to.be.capture(function (page) {
             page.load("?" + widgetizeParams + "&" + generalParams + "&moduleToWidgetize=MultiSites&actionToWidgetize=standalone");
             page.wait(1000);
@@ -395,7 +395,7 @@ describe("UIIntegrationTest", function () { // TODO: Rename to Piwik?
     });
 
     it('should widgetize the ecommerce log correctly', function (done) {
-        this.retries(3);
+        // this.retries(3);
         expect.screenshot('widgetize_ecommercelog').to.be.capture(function (page) {
             page.load("?" + widgetizeParams + "&" + generalParams + "&moduleToWidgetize=Ecommerce&actionToWidgetize=getEcommerceLog&filter_limit=-1");
         }, done);
@@ -423,14 +423,14 @@ describe("UIIntegrationTest", function () { // TODO: Rename to Piwik?
     });
 
     it('should load the ecommerce log page', function (done) {
-        this.retries(3);
+        // this.retries(3);
         expect.screenshot('ecommerce_log').to.be.captureSelector('.pageWrap', function (page) {
             page.load("?" + urlBase + "#?" + generalParams + "&category=Goals_Ecommerce&subcategory=Goals_EcommerceLog");
         }, done);
     });
 
     it('should load the ecommerce log page with segment', function (done) {
-        this.retries(3);
+        // this.retries(3);
         expect.screenshot('ecommerce_log_segmented').to.be.captureSelector('.pageWrap', function (page) {
             page.load("?" + urlBase + "&segment=countryCode%3D%3DUS#?" + generalParams + "&category=Goals_Ecommerce&subcategory=Goals_EcommerceLog&segment=countryCode%3D%3DUS");
         }, done);
@@ -698,7 +698,7 @@ describe("UIIntegrationTest", function () { // TODO: Rename to Piwik?
 
     // visitor profile popup
     it('should load the visitor profile popup correctly', function (done) {
-        this.retries(3);
+        // this.retries(3);
 
         expect.screenshot('visitor_profile_popup').to.be.capture(function (page) {
             page.load("?" + widgetizeParams + "&" + idSite2Params + "&moduleToWidgetize=Live&actionToWidgetize=getVisitorProfilePopup"
@@ -726,7 +726,7 @@ describe("UIIntegrationTest", function () { // TODO: Rename to Piwik?
 
     // extra segment tests
     it('should load the row evolution page correctly when a segment is selected', function (done) {
-        this.retries(3);
+        // this.retries(3);
         expect.page().contains('.ui-dialog > .ui-dialog-content > div.rowevolution:visible', /*'segmented_rowevolution',*/ function (page) {
             var url = "?module=CoreHome&action=index&idSite=1&period=year&date=2012-01-13#?category=General_Visitors&subcategory=CustomVariables_CustomVariables&idSite=1&period=year&date=2012-01-13";
             page.load(url, 1000);
@@ -742,7 +742,7 @@ describe("UIIntegrationTest", function () { // TODO: Rename to Piwik?
     });
 
     it('should load the segmented visitor log correctly when a segment is selected', function (done) {
-        this.retries(3);
+        // this.retries(3);
         expect.screenshot('segmented_visitorlog').to.be.captureSelector('.ui-dialog > .ui-dialog-content > div.dataTableVizVisitorLog', function (page) {
             var url = "?module=CoreHome&action=index&idSite=1&period=year&date=2012-01-13#?category=General_Visitors&subcategory=CustomVariables_CustomVariables&idSite=1&period=year&date=2012-01-13";
             page.load(url, 1000);
@@ -759,7 +759,7 @@ describe("UIIntegrationTest", function () { // TODO: Rename to Piwik?
     });
 
     it('should not apply current segmented when opening visitor log', function (done) {
-        this.retries(3);
+        // this.retries(3);
 
         delete testEnvironment.queryParamOverride.visitorId;
         testEnvironment.save();

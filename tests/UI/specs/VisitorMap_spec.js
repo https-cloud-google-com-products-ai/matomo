@@ -16,7 +16,7 @@ describe("VisitorMap", function () {
             + "actionToWidgetize=visitorMap&viewDataTable=table&filter_limit=5&isFooterExpandedInDashboard=1";
 
     it("should display the bounce rate metric correctly", function (done) {
-        this.retries(3);
+        // this.retries(3);
 
         expect.screenshot('bounce_rate').to.be.similar(0.002).to.capture(function (page) {
             page.load(url);

@@ -10,7 +10,7 @@
 var fs = require('fs');
 
 describe("Theme", function () {
-    this.retries(2);
+    // this.retries(2);
 
     this.timeout(0);
 
